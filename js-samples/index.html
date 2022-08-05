@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>Adrian Boamba Maps project</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <!-- CSS only -->
+    <!-- Bootstrap css -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script type="module" src="./index.ts"></script>
+  </head>
+  <body>
+    
+    
+    <div id="map" style="width: 45%; height: 100%; float: left">Title</div>
+    <div id="pano" style="width: 55%; height: 100%; float: left"></div>
+    <div  style="width: 45%; height: 100%; float: left"><h5>Travel to whatever destination you want or go to a</h5><button class="btn btn-outline-secondary" type="button" id="btn">Random location</button>
+      <iframe
+      src="https://www.bing.com/search?q=Paris" style="width: 100%; height: 100%;" id="wikipedia"></iframe>
+    </div>
+    <div  style="width: 55%; height: 100%; float: left">
+      <div id="app"></div> 
+      <!-- Bootstrap example -->
+      
+      
+      <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+        <img class="me-3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png" alt="" width="48" height="38">
+        <div class="lh-1">
+          <h1 class="h6 mb-0 text-white lh-1">Bootstrap</h1>
+          <small>Since 2011</small>
+        </div>
+      </div>
+      <div class="dropdown" style="float: right;">
+        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+          <strong>Adrian Boamba</strong>
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+          
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div>
+    
+      
+    
+      <div class="my-3 p-3 bg-body rounded shadow-sm">
+        <h6 class="border-bottom pb-2 mb-0">Nearby suggestions</h6>
+        <div class="d-flex text-muted pt-3">
+          
+          <img src="https://m.media-amazon.com/images/M/MV5BMjIyYWZiZmYtOWY5ZC00OTMwLTg1MmYtMDZkY2M5YzQyYTM5XkEyXkFqcGdeQXVyMjMyMTk2NzE@._V1_UY1200_CR108,0,630,1200_AL_.jpg" class="bd-placeholder-img flex-shrink-0 me-2 rounded"  width="32" height="32" alt="">
+          <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+            <div class="d-flex justify-content-between">
+              <strong class="text-gray-dark">Tim Dillon</strong>
+              <span class="d-block">@Tim Dillon</span>
+              <div class="m-4">
+                <!-- Button HTML (to Trigger Modal) -->
+                <button type="button" class="btn btn-primary" id="showfriend">Map <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg></button>
+                
+                <a href="#myModal" role="button" class="btn btn-md btn-primary" data-bs-toggle="modal">Chat <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                  <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+                </svg></a>
+                <div id="myModal" class="modal fade" tabindex="-1">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <img src="https://m.media-amazon.com/images/M/MV5BMjIyYWZiZmYtOWY5ZC00OTMwLTg1MmYtMDZkY2M5YzQyYTM5XkEyXkFqcGdeQXVyMjMyMTk2NzE@._V1_UY1200_CR108,0,630,1200_AL_.jpg" class="bd-placeholder-img flex-shrink-0 me-2 rounded"  width="32" height="32" alt="">
+                              <h5 class="modal-title">Tim Dillon</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">Message</span>
+                              </div>
+                              <textarea class="form-control" aria-label="With textarea"></textarea>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                              
+                              <button type="button" class="btn btn-primary">Send</button>
+                          </div>
+                          
+                      </div>
+                  </div>
+                </div>
+                <!-- Modal HTML -->
+                
+            </div>
+           </div>
+            
+          </div>
+        </div>
+
+        <div class="d-flex text-muted pt-3">
+          <img src="https://cdn.britannica.com/53/9253-004-19562198/James-Stewart-Its-a-Wonderful-Life.jpg?w=400&h=300&c=crop" class="bd-placeholder-img flex-shrink-0 me-2 rounded"  width="32" height="32" alt="">
+    
+          <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+            <div class="d-flex justify-content-between">
+              <strong class="text-gray-dark">Jimmy Stewart</strong>
+              <span class="d-block">@JimmyStewart</span>
+              <div class="m-4">
+                <button type="button" class="btn btn-primary" id="showfriend">Map <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg></button>
+                
+                <a href="#myModal" role="button" class="btn btn-md btn-primary" data-bs-toggle="modal">Chat <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                  <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+                </svg></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="d-flex text-muted pt-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Grace_Kelly_1955.jpg/1200px-Grace_Kelly_1955.jpg" class="bd-placeholder-img flex-shrink-0 me-2 rounded"  width="32" height="32" alt="">
+    
+          <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+            <div class="d-flex justify-content-between">
+              <strong class="text-gray-dark">Grace Kelly</strong>
+              <span class="d-block">@GraceKelly</span>
+              <div class="m-4">
+                <button type="button" class="btn btn-primary" id="showfriend">Map <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg></button>
+                
+                <a href="#myModal" role="button" class="btn btn-md btn-primary" data-bs-toggle="modal">Chat <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+                  <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+                </svg></a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <small class="d-block text-end mt-3">
+          <a href="#">All suggestions</a>
+        </small>
+      </div>
+       
+
+      
+
+      <!-- Bootstrap example end -->
+    </div>
+
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCViqMybum1d7N2ATpoqtP1usGrZFUA8z8&callback=initMap&v=weekly"
+      defer
+    ></script>
+    
+    
+
+    <!-- 
+     Bootstrap scripts
+    -->
+    
+    <!-- JavaScript Bundle with Popper -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="offcanvas.js"></script>
+    
+  </body>
+</html>
